@@ -488,11 +488,11 @@ body {
     width: 46.7%; }
   .banner-box {
     top: 48%;
-    width: 12.3%; }
+    width: 14.9%; }
     .banner-box.left {
-      left: 36.5%; }
+      left: 35.5%; }
     .banner-box.right {
-      left: 50.5%; }
+      left: 51%; }
   .banner-seagull img {
     -webkit-animation-name: seagull;
             animation-name: seagull;
