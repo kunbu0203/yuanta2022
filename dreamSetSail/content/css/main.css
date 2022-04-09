@@ -883,6 +883,8 @@ ol {
   margin: 0;
   padding-left: 25px;
   line-height: 1.8; }
+  ol li span {
+    color: #ffe153; }
   ol.chinese {
     padding-left: 30px;
     list-style-type: none; }
