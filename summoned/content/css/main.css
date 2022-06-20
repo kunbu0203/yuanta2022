@@ -284,6 +284,112 @@ body {
       bottom: 70px;
       right: 20px; } }
 
+/* ------------------------------- creditSlogan ------------------------------- */
+.creditSlogan {
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; }
+
+.creditSlogan div {
+  font-size: 14px;
+  color: #575757;
+  padding: 0 0 0 30px;
+  line-height: 1.6; }
+
+.creditSlogan div:first-child {
+  font-size: 28px;
+  font-weight: 500;
+  color: #575757;
+  letter-spacing: 0.6px;
+  border-right: 1px solid #666666;
+  padding: 0 30px 0 0; }
+
+.creditSlogan div span:first-child::after {
+  content: '：'; }
+
+.creditSlogan div:first-child span:first-child {
+  padding: 0 10px 0 0; }
+
+.creditSlogan div:first-child span:first-child::after {
+  display: none; }
+
+.creditSlogan a {
+  color: #007fe0; }
+
+.creditSlogan a:hover {
+  color: #007fe0; }
+
+@media screen and (max-width: 1200px) {
+  .creditSlogan div {
+    font-size: 14px;
+    padding: 0 0 0 10px; }
+  .creditSlogan div:first-child {
+    padding: 0 10px 0 0; } }
+
+@media screen and (max-width: 1024px) {
+  .topView h2 {
+    width: 100%;
+    position: absolute;
+    top: 30%; }
+  .creditSlogan div {
+    font-size: 14px;
+    padding: 0 0 0 10px; }
+  .creditSlogan div:first-child {
+    box-sizing: border-box;
+    padding: 0; }
+  .creditSlogan div:first-child span {
+    display: block; } }
+
+@media screen and (max-width: 870px) {
+  .creditSlogan {
+    height: 125px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center; }
+  .creditSlogan div {
+    align-self: flex-start; }
+  .creditSlogan div:first-child {
+    font-size: 20px;
+    margin: 0; }
+  .creditSlogan p {
+    font-size: 14px;
+    line-height: 22px; } }
+
+@media screen and (max-width: 800px) {
+  .creditSlogan {
+    width: 100%;
+    height: auto;
+    padding: 20px; }
+  .creditSlogan div {
+    width: 100%;
+    align-self: center;
+    text-align: center; }
+  .creditSlogan div:first-child {
+    font-size: 30px;
+    border-bottom: 1px solid;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 10px; }
+  .creditSlogan p {
+    font-size: 14px;
+    line-height: 2;
+    padding: 0; } }
+
+@media screen and (max-width: 420px) {
+  .creditSlogan {
+    padding: 20px 10px; }
+  .creditSlogan div:first-child {
+    font-size: 24px; }
+  .creditSlogan p {
+    font-size: 12px;
+    line-height: 1.8; } }
+
 @-webkit-keyframes scroll {
   0% {
     transform: translate(-50%, 0); }
@@ -316,41 +422,17 @@ body {
   100% {
     transform: scaleY(1); } }
 
-@-webkit-keyframes telescope {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(2deg); } }
-
-@keyframes telescope {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(2deg); } }
-
-@-webkit-keyframes phone {
+@-webkit-keyframes hand {
   0% {
     transform: rotate(0); }
   100% {
     transform: rotate(3deg); } }
 
-@keyframes phone {
+@keyframes hand {
   0% {
     transform: rotate(0); }
   100% {
     transform: rotate(3deg); } }
-
-@-webkit-keyframes logo {
-  0% {
-    transform: scale(1); }
-  100% {
-    transform: scale(1.1); } }
-
-@keyframes logo {
-  0% {
-    transform: scale(1); }
-  100% {
-    transform: scale(1.1); } }
 
 @-webkit-keyframes man {
   0% {
@@ -363,6 +445,22 @@ body {
     transform: skewX(-2deg); }
   100% {
     transform: skewX(2deg); } }
+
+@-webkit-keyframes debut {
+  0% {
+    transform: translateY(100px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
+@keyframes debut {
+  0% {
+    transform: translateY(100px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
 
 .banner {
   position: relative;
@@ -405,12 +503,30 @@ body {
     width: 26%; }
   .banner-text {
     top: 39%;
-    left: 33%;
-    width: 33%; }
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 0.9375vw;
+    text-align: center;
+    z-index: 1; }
+    .banner-text span {
+      color: #ea6000; }
+    .banner-text b {
+      font-size: 1.25vw; }
   .banner-man {
     left: 37%;
     bottom: -16%;
-    width: 22%; }
+    width: 22%;
+    opacity: 0;
+    -webkit-animation-name: debut;
+            animation-name: debut;
+    -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+    -webkit-animation-timing-function: cubic-bezier(0, 0.56, 0.6, 1.57);
+            animation-timing-function: cubic-bezier(0, 0.56, 0.6, 1.57);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
     .banner-man img {
       -webkit-animation-name: man;
               animation-name: man;
@@ -425,7 +541,18 @@ body {
   .banner-group {
     left: 14%;
     bottom: -13.5%;
-    width: 68%; }
+    width: 68%;
+    opacity: 0;
+    -webkit-animation-name: debut;
+            animation-name: debut;
+    -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+    -webkit-animation-timing-function: cubic-bezier(0, 0.56, 0.6, 1.57);
+            animation-timing-function: cubic-bezier(0, 0.56, 0.6, 1.57);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-delay: .8s;
+            animation-delay: .8s; }
     .banner-group::after {
       content: '';
       position: absolute;
@@ -441,10 +568,26 @@ body {
     width: 33%; }
     .banner-telescope img {
       transform-origin: top right;
-      -webkit-animation-name: telescope;
-              animation-name: telescope;
+      -webkit-animation-name: hand;
+              animation-name: hand;
       -webkit-animation-duration: 2s;
               animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate; }
+  .banner-loud {
+    top: 48%;
+    left: 25%;
+    width: 20%; }
+    .banner-loud img {
+      transform-origin: top right;
+      -webkit-animation-name: hand;
+              animation-name: hand;
+      -webkit-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-delay: -2s;
+              animation-delay: -2s;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite;
       -webkit-animation-direction: alternate;
@@ -455,23 +598,26 @@ body {
     width: 14%; }
     .banner-phone img {
       transform-origin: top left;
-      -webkit-animation-name: phone;
-              animation-name: phone;
+      -webkit-animation-name: hand;
+              animation-name: hand;
       -webkit-animation-duration: 2s;
               animation-duration: 2s;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite;
       -webkit-animation-direction: alternate;
               animation-direction: alternate; }
-  .banner-logo {
-    top: 7.5%;
-    right: 3%;
-    width: 11%; }
-    .banner-logo img {
-      -webkit-animation-name: logo;
-              animation-name: logo;
+  .banner-magnifier {
+    top: 0;
+    right: 0;
+    width: 33%; }
+    .banner-magnifier img {
+      transform-origin: center left;
+      -webkit-animation-name: hand;
+              animation-name: hand;
       -webkit-animation-duration: 2s;
               animation-duration: 2s;
+      -webkit-animation-delay: -2s;
+              animation-delay: -2s;
       -webkit-animation-iteration-count: infinite;
               animation-iteration-count: infinite;
       -webkit-animation-direction: alternate;
@@ -554,9 +700,11 @@ body {
         left: 13%;
         width: 72.5%; }
       .banner-text {
-        top: 50%;
-        left: 6.5%;
-        width: 86%; }
+        top: 49%;
+        font-size: 3.4375vw;
+        text-align: left; }
+        .banner-text b {
+          font-size: 4vw; }
       .banner-man {
         left: 22%;
         bottom: -5%;
@@ -571,14 +719,18 @@ body {
         top: 13%;
         left: 1%;
         width: 32%; }
+      .banner-loud {
+        top: 41%;
+        left: 14.5%;
+        width: 32%; }
       .banner-phone {
         bottom: 42%;
         right: 26%;
         width: 22%; }
-      .banner-logo {
-        top: 6.5%;
-        right: 7%;
-        width: 11%; }
+      .banner-magnifier {
+        top: 3.5%;
+        right: 5%;
+        width: 36%; }
       .banner-scroll {
         width: 55px;
         height: 55px; }
@@ -707,6 +859,18 @@ body {
       .block-content {
         padding-top: 10px; } }
 
+@-webkit-keyframes shake {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(5deg); } }
+
+@keyframes shake {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(5deg); } }
+
 .block.-task .block-wrap {
   max-width: 1300px; }
   .block.-task .block-wrap::before {
@@ -781,6 +945,44 @@ body {
 
 .block.-lottery .block-wrap {
   z-index: 1; }
+  .block.-lottery .block-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 250px;
+    left: -140px;
+    width: 87px;
+    height: 220px;
+    background-image: url(./../images/background/ribbon-left.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-animation-name: shake;
+            animation-name: shake;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate; }
+  .block.-lottery .block-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 290px;
+    right: -140px;
+    width: 51px;
+    height: 205px;
+    background-image: url(./../images/background/ribbon-right.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -webkit-animation-name: shake;
+            animation-name: shake;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate; }
 
 .block.-lottery .block-content {
   box-sizing: border-box;
@@ -848,6 +1050,18 @@ body {
     .block.-lottery::after {
       min-width: 1023px;
       background-image: url(./../images/background/wave-top.png); }
+  .block.-lottery .block-wrap::before {
+    top: 120px;
+    bottom: auto;
+    left: calc(50% - 140px);
+    width: 33px;
+    height: 83px; }
+  .block.-lottery .block-wrap::after {
+    top: 50px;
+    bottom: auto;
+    left: calc(50% + 120px);
+    width: 20px;
+    height: 77px; }
   .block.-lottery .block-content {
     padding: 0;
     border-radius: 0;
@@ -886,6 +1100,18 @@ body {
         .puzzleGrid-item:nth-of-type(3) {
           margin-top: -10px; } }
 
+@-webkit-keyframes fly {
+  0% {
+    transform: translateY(-5px); }
+  100% {
+    transform: translateY(5px); } }
+
+@keyframes fly {
+  0% {
+    transform: translateY(-5px); }
+  100% {
+    transform: translateY(5px); } }
+
 .puzzle {
   position: relative; }
   .puzzle-pic {
@@ -895,6 +1121,17 @@ body {
     transform: translateX(-100%);
     z-index: 1;
     pointer-events: none; }
+    .puzzle-pic img {
+      -webkit-animation-name: fly;
+              animation-name: fly;
+      -webkit-animation-duration: 2s;
+              animation-duration: 2s;
+      -webkit-animation-timing-function: ease-in-out;
+              animation-timing-function: ease-in-out;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate; }
   .puzzle-content {
     position: relative;
     box-sizing: border-box;
@@ -994,6 +1231,9 @@ body {
   left: auto;
   right: 50px;
   transform: translateX(100%); }
+  .puzzle.-right .puzzle-pic img {
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s; }
 
 .puzzle.-right .puzzle-content {
   padding: 60px 40px 20px 100px; }
@@ -1004,6 +1244,9 @@ body {
   top: auto;
   bottom: -50px;
   left: 60px; }
+  .puzzle.-bottom .puzzle-pic img {
+    -webkit-animation-delay: -1.5s;
+            animation-delay: -1.5s; }
 
 .puzzle.-bottom .puzzle-content {
   padding: 100px 75px 20px 50px; }
@@ -1014,6 +1257,9 @@ body {
 .puzzle.-right.-bottom .puzzle-pic {
   left: auto;
   right: 80px; }
+  .puzzle.-right.-bottom .puzzle-pic img {
+    -webkit-animation-delay: -.5s;
+            animation-delay: -.5s; }
 
 .puzzle.-right.-bottom .puzzle-content {
   padding: 100px 40px 20px 110px; }
@@ -1062,6 +1308,8 @@ body {
   align-items: center;
   height: 100%;
   text-align: center; }
+  .task-pic img {
+    width: 252px; }
   .task-title {
     display: flex;
     justify-content: center;
@@ -1289,19 +1537,35 @@ body {
 
 ol {
   margin: 0;
-  padding-left: 30px; }
-  ol > li > ol {
-    list-style-type: none;
-    padding-left: 32px; }
-    ol > li > ol > li {
-      position: relative;
-      counter-increment: section; }
-      ol > li > ol > li::before {
-        content: "(" counter(section, decimal) ")";
+  padding-left: 25px;
+  line-height: 1.8; }
+  ol.chinese {
+    padding-left: 30px;
+    list-style-type: none; }
+    ol.chinese > li {
+      position: relative; }
+      ol.chinese > li::before {
+        content: "(" attr(data-num) ")";
         position: absolute;
         top: 0;
-        left: -5px;
+        left: -3px;
         transform: translateX(-100%); }
+  ol.decimal {
+    list-style-type: none; }
+    ol.decimal > li {
+      position: relative;
+      counter-increment: decimal; }
+      ol.decimal > li::before {
+        content: "(" counter(decimal, decimal) ")";
+        position: absolute;
+        top: 0;
+        left: -3px;
+        transform: translateX(-100%); }
+  @media only screen and (max-width: 767px) {
+    ol {
+      padding-left: 20px; }
+      ol.chinese {
+        padding-left: 25px; } }
 
 .block .swiper-container-horizontal > .swiper-pagination-bullets,
 .block .swiper-pagination-custom,
