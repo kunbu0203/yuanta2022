@@ -1,7 +1,7 @@
 $(function () {
   // 進場
   AOS.init({
-    offset: 50,
+    offset: 10,
     duration: 800,
     once: true
   }); // tool show/hide

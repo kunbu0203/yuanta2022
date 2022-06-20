@@ -1397,6 +1397,7 @@ b {
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
+    opacity: 0 !important;
     pointer-events: none !important; } }
 
 @media only screen and (max-width: 1023px) {
@@ -1406,4 +1407,5 @@ b {
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
+    opacity: 0 !important;
     pointer-events: none !important; } }
