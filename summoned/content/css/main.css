@@ -462,18 +462,40 @@ body {
     transform: translateY(0);
     opacity: 1; } }
 
+@-webkit-keyframes title {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes title {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .banner {
   position: relative;
   padding-bottom: 42%;
   background-image: url(../images/banner/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: bottom center;
   overflow: hidden; }
   .banner img {
     width: 100%; }
   .banner-item {
     position: absolute; }
+  .banner-title, .banner-eyes, .banner-light, .banner-subTitle, .banner-text {
+    opacity: 0;
+    -webkit-animation-name: title;
+            animation-name: title;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-delay: 200;
+            animation-delay: 200; }
   .banner-title {
     top: 3%;
     left: 28%;
@@ -510,7 +532,7 @@ body {
     font-size: 0.9375vw;
     text-align: center;
     z-index: 1; }
-    .banner-text span {
+    .banner-text .highlight {
       color: #ea6000; }
     .banner-text b {
       font-size: 1.25vw; }
@@ -667,32 +689,73 @@ body {
     .banner-light {
       top: 12.5%; } }
   @media only screen and (max-width: 1023px) {
-    .banner-eyes {
-      top: 15.5%; }
-    .banner-light {
-      top: 15%; } }
-  @media only screen and (max-width: 580px) {
-    .banner-eyes {
-      top: 15%; }
-    .banner-light {
-      top: 14.5%; } }
-  @media only screen and (max-width: 450px) {
-    .banner-eyes {
-      top: 14.3%; }
-    .banner-light {
-      top: 14%; } }
-  @media only screen and (max-width: 1023px) {
     .banner {
-      padding-bottom: 158%;
+      padding-bottom: 125%;
       background-image: url(../images/banner/bg-mb.jpg); }
+      .banner-title {
+        top: 3.5%;
+        left: 22%;
+        width: 60%; }
+      .banner-eyes {
+        top: 15%;
+        left: 55%;
+        width: 8%; }
+      .banner-light {
+        top: 14.5%;
+        left: 55%;
+        width: 8%; }
+      .banner-subTitle {
+        top: 41%;
+        left: 22.5%;
+        width: 53%; }
+      .banner-text {
+        top: 47%;
+        font-size: 2.5vw;
+        line-height: 1.8;
+        padding: 0 18%;
+        text-align: left; }
+        .banner-text b {
+          font-size: 3.3vw;
+          line-height: 0; }
+      .banner-man {
+        left: 25.5%;
+        bottom: -5%;
+        width: 43.5%; }
+      .banner-group {
+        left: 13%;
+        bottom: -13%;
+        width: 80%; }
+        .banner-group::after {
+          background-image: url(./../images/banner/group-mask-mb.png); }
+      .banner-telescope {
+        top: 13%;
+        left: 1%;
+        width: 32%; }
+      .banner-loud {
+        top: 41%;
+        left: 14.5%;
+        width: 32%; }
+      .banner-phone {
+        bottom: 42%;
+        right: 26%;
+        width: 22%; }
+      .banner-magnifier {
+        top: 3.5%;
+        right: 5%;
+        width: 36%; } }
+  @media only screen and (max-width: 767px) {
+    .banner {
+      padding-bottom: 158%; }
       .banner-title {
         top: 3.5%;
         left: 12.5%;
         width: 80%; }
       .banner-eyes {
+        top: 15.5%;
         left: 56.8%;
         width: 10%; }
       .banner-light {
+        top: 15%;
         left: 56.8%;
         width: 10%; }
       .banner-subTitle {
@@ -701,10 +764,12 @@ body {
         width: 72.5%; }
       .banner-text {
         top: 49%;
+        padding: 0 20px;
         font-size: 3.4375vw;
         text-align: left; }
         .banner-text b {
-          font-size: 4vw; }
+          font-size: 4vw;
+          line-height: 5.16vw; }
       .banner-man {
         left: 22%;
         bottom: -5%;
@@ -740,6 +805,16 @@ body {
           width: 18px;
           height: 9.5px;
           background-size: 100%; } }
+  @media only screen and (max-width: 580px) {
+    .banner-eyes {
+      top: 15%; }
+    .banner-light {
+      top: 14.5%; } }
+  @media only screen and (max-width: 450px) {
+    .banner-eyes {
+      top: 14.3%; }
+    .banner-light {
+      top: 14%; } }
 
 .action {
   display: flex;
