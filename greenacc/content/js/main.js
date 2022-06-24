@@ -70,32 +70,7 @@ $(function () {
         spaceBetween: 20
       }
     }
-  }); // tab
-
-  $('[data-tab]').on('click', function (e) {
-    e.preventDefault();
-    var val = $(this).data('tab');
-    $('[data-tab], [data-tab-content]').removeClass('-active');
-    $(this).addClass('-active');
-    $('[data-tab-content="' + val + '"]').addClass('-active');
-    $('html, body').scrollTop($('[data-nav]').offset().top);
-    $('[data-animate-block]').attr('data-animate-block', '');
-    $(window).trigger('scroll');
-  });
-
-  if (location.href.indexOf('?') != -1) {
-    var paramAry = location.href.split('?')[1].split('&'),
-        tabStr = paramAry.find(function (item, index) {
-      return item.indexOf('tab') != -1;
-    });
-    var name = tabStr.split('=')[1];
-    $('[data-tab], [data-tab-content]').removeClass('-active');
-    $('[data-tab="' + name + '"]').addClass('-active');
-    $('[data-tab-content="' + name + '"]').addClass('-active');
-    $('html, body').scrollTop($('[data-nav]').offset().top);
-    $(window).trigger('scroll');
-  } // bar
-
+  }); // bar
 
   var bar = document.querySelector('[data-bar-main]'),
       barMb = document.querySelector('[data-bar-main-mb]');
@@ -158,5 +133,29 @@ $(function () {
     } else {
       return;
     }
+  }); // tab
+
+  $('[data-tab]').on('click', function (e) {
+    e.preventDefault();
+    var val = $(this).data('tab');
+    $('[data-tab], [data-tab-content]').removeClass('-active');
+    $(this).addClass('-active');
+    $('[data-tab-content="' + val + '"]').addClass('-active');
+    $('html, body').scrollTop($('[data-nav]').offset().top);
+    $('[data-animate-block]').attr('data-animate-block', '');
+    $(window).trigger('scroll');
   });
+
+  if (location.href.indexOf('?') != -1) {
+    var paramAry = location.href.split('?')[1].split('&'),
+        tabStr = paramAry.find(function (item, index) {
+      return item.indexOf('tab') != -1;
+    });
+    var name = tabStr.split('=')[1];
+    $('[data-tab], [data-tab-content]').removeClass('-active');
+    $('[data-tab="' + name + '"]').addClass('-active');
+    $('[data-tab-content="' + name + '"]').addClass('-active');
+    $('html, body').scrollTop($('[data-nav]').offset().top);
+    $(window).trigger('scroll');
+  }
 });
