@@ -72,31 +72,8 @@ $(function () {
     }
   }); // bar
 
-  var bar = document.querySelector('[data-bar-main]'),
-      barMb = document.querySelector('[data-bar-main-mb]');
+  var bar = document.querySelector('[data-bar-main]');
   noUiSlider.create(bar, {
-    start: 1,
-    behaviour: 'drag-smooth-steps-tap',
-    connect: [true, false],
-    step: 10,
-    range: {
-      'min': [0, 1],
-      '10%': [1, 2],
-      '30%': [3, 2],
-      '50%': [5, 5],
-      'max': [10]
-    },
-    pips: {
-      mode: 'values',
-      values: [1, 3, 5, 10],
-      density: 100,
-      format: wNumb({
-        suffix: '年'
-      })
-    }
-  });
-  noUiSlider.create(barMb, {
-    orientation: 'vertical',
     start: 1,
     behaviour: 'drag-smooth-steps-tap',
     connect: [true, false],
@@ -120,10 +97,6 @@ $(function () {
   bar.noUiSlider.on('update', function (val) {
     var val = parseInt(val);
     $('[data-bar]').removeClass().addClass('bar -pc is-' + val);
-  });
-  barMb.noUiSlider.on('update', function (val) {
-    var val = parseInt(val);
-    $('[data-bar-mb]').removeClass().addClass('bar -mb is-' + val);
   });
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   $('[data-login]').on('click', function (e) {
