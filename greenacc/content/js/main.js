@@ -148,8 +148,11 @@ $(function () {
 
   if (location.href.indexOf('?') != -1) {
     var paramAry = location.href.split('?')[1].split('&'),
-        tabStr = paramAry.find(function (item, index) {
-      return item.indexOf('tab') != -1;
+        tabStr = '';
+    paramAry.forEach(function (item) {
+      if (item.indexOf('tab') != -1) {
+        tabStr = item;
+      }
     });
     var name = tabStr.split('=')[1];
     $('[data-tab], [data-tab-content]').removeClass('-active');
