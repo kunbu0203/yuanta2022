@@ -48,7 +48,7 @@ $(function () {
 
   $('[data-collapse-action]').on('click', function (e) {
     e.preventDefault();
-    $(this).toggleClass('open').closest('[data-collapse]').find('[data-collapse-content]').slideToggle();
+    $(this).closest('[data-collapse]').toggleClass('is-open').find('[data-collapse-content]').slideToggle();
   }); // 漢堡
 
   $('[data-burger]').on('click', function () {

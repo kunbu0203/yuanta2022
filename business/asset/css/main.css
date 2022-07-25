@@ -706,7 +706,8 @@ body {
   margin: 0 auto;
   transform: translateY(-50%) translateY(-2.5px);
   border-radius: 50%;
-  background-color: #3d7bca; }
+  background-color: #3d7bca;
+  cursor: pointer; }
   .card-collapse::before {
     content: '';
     position: absolute;
@@ -729,6 +730,7 @@ body {
     background-color: #fff; }
 
 .card-list {
+  display: none;
   font-size: 15px;
   line-height: 1.6; }
   .card-list.-chart {
