@@ -707,7 +707,8 @@ body {
   transform: translateY(-50%) translateY(-2.5px);
   border-radius: 50%;
   background-color: #3d7bca;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 1; }
   .card-collapse::before {
     content: '';
     position: absolute;
@@ -761,15 +762,17 @@ body {
     text-align: center; }
     .card-collapse {
       width: 24px;
-      height: 24px; }
+      height: 24px;
+      margin-bottom: -24px;
+      transition: .3s; }
       .card-collapse::before {
         width: 9px; }
       .card-collapse::after {
         height: 9px; }
+    .card.is-open .card-collapse {
+      margin-bottom: 0; }
     .card-list {
-      display: inline-block;
-      font-size: 13px;
-      text-align: left; }
+      font-size: 13px; }
     .card.-simple {
       position: relative; }
     .card.-simple .card-collapse {
@@ -778,7 +781,6 @@ body {
       right: 10px;
       margin: 0; }
     .card.-simple .card-list {
-      display: block;
       padding: 15px 20px; } }
 
 ul {
@@ -818,16 +820,23 @@ ul {
         width: 10px;
         height: 10px; } }
   @media only screen and (max-width: 767px) {
-    ul > li::before {
-      top: 7px;
-      width: 5px;
-      height: 5px; }
-    ul.-cube {
-      padding-left: 18px; }
-      ul.-cube > li::before {
-        left: -16px;
-        width: 8px;
-        height: 8px; } }
+    ul {
+      display: inline-block;
+      text-align: left; }
+      ul > li::before {
+        top: 7px;
+        width: 5px;
+        height: 5px; }
+      .-simple ul {
+        display: block; }
+      ul.-cube {
+        display: block;
+        padding-left: 18px; }
+        ul.-cube > li::before {
+          top: 8px;
+          left: -16px;
+          width: 8px;
+          height: 8px; } }
 
 .tab-title {
   margin-bottom: 20px;
