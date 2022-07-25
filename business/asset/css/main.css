@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: Arial, "Noto Sans TC", sans-serif, "Microsoft JhengHei", Helvetica;
+  font-family: Arial, "Microsoft JhengHei", sans-serif, Helvetica;
   font-size: 16px;
   line-height: 1.5;
   color: #333; }
@@ -180,7 +180,7 @@ body {
   justify-content: flex-end; }
   .nav a {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     color: #333;
     text-decoration: none; }
   .nav a + a {
@@ -279,7 +279,7 @@ body {
     position: relative;
     padding: 20px 0;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     text-align: center;
     color: #005bac;
     text-decoration: none;
@@ -354,7 +354,7 @@ body {
   .banner-title {
     margin-bottom: 30px;
     font-size: 67px;
-    font-weight: 500; }
+    font-weight: bold; }
   .banner-text {
     margin-bottom: 50px;
     font-size: 22px; }
@@ -362,8 +362,11 @@ body {
       margin-top: 10px;
       font-size: 17px; }
   .banner-btn {
+    box-sizing: border-box;
     display: inline-block;
+    width: 226px;
     padding: 12px 25px 12px 45px;
+    text-align: center;
     text-decoration: none;
     background-color: #fff; }
     .banner-btn span {
@@ -395,6 +398,7 @@ body {
           margin-top: 5px;
           font-size: 13px; }
       .banner-btn {
+        width: 221px;
         padding: 12px 25px 12px 40px; } }
   @media only screen and (max-width: 767px) {
     .banner {
@@ -841,7 +845,7 @@ ul {
 .tab-title {
   margin-bottom: 20px;
   font-size: 31px;
-  font-weight: 500;
+  font-weight: bold;
   text-align: center;
   color: #eb6100; }
 
@@ -857,7 +861,7 @@ ul {
   border: 2px solid #3d7bca;
   background-color: #fff;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: bold;
   color: #3d7bca;
   text-align: center;
   text-decoration: none; }
@@ -913,16 +917,14 @@ p {
   margin: 0; }
 
 b {
-  font-weight: 500; }
-  b.-en {
-    font-weight: bold; }
+  font-weight: bold; }
 
 .stress {
   color: #eb6100; }
 
 .title {
   font-size: 49px;
-  font-weight: 500;
+  font-weight: bold;
   color: #3d7bca; }
   .title.-sub {
     font-size: 38px; }
@@ -974,7 +976,7 @@ b {
     .iconInfo-pic img {
       width: 70px; }
   .iconInfo-text {
-    font-weight: 500;
+    font-weight: bold;
     color: #3d7bca; }
   .iconInfo.-card {
     box-sizing: border-box;
@@ -1063,7 +1065,7 @@ b {
     display: inline-block;
     vertical-align: middle;
     font-size: 26px;
-    font-weight: 500;
+    font-weight: bold;
     color: #005bac; }
   .numInfo-title .num {
     width: 37px;
